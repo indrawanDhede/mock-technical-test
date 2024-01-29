@@ -29,7 +29,7 @@ class BookController {
         });
       }
 
-      const book = bookModel.find((item) => item.id === id);
+      const book = bookModel.find((item) => parseInt(item.id) === parseInt(id));
       if (!book) {
         return res.status(404).json({
           message: "Data tidak ditemukan.",
